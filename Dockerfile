@@ -21,7 +21,6 @@ RUN chmod +x /etc/my_init.d/startup.sh
 
 
 ##Adding Deamons to containers
-#refers to dockerfile_reference
 # to add nginx deamon to runit
 RUN mkdir /etc/service/nginx
 COPY nginx.sh /etc/service/nginx/run
@@ -40,17 +39,9 @@ COPY backup.sh /sbin/backup
 RUN chmod +x /sbin/backup
 VOLUME /var/backups
 
-
-#add files and script that need to be use for this container
-#include conf file relate to service/daemon 
-#additionsl tools to be use internally 
-
 # to allow access from outside of the container  to the container service
 # at that ports need to allow access from firewall if need to access it outside of the server. 
 EXPOSE 443
-
-#creatian of volume 
-#VOLUME 
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
