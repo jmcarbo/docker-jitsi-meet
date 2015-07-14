@@ -20,11 +20,11 @@ To install docker in Ubuntu 14.04 use the commands:
 
 To run container use the command below:
 
-    $ docker run -d -p 443 quantumobject/docker-jitsi-meet
+    $ docker run -d -P quantumobject/docker-jitsi-meet
 
 or
 
-    $ docker run -d -p xxxxx:443 quantumobject/docker-jitsi-meet
+    $ docker run -d -p xxxxx:443 -p 5275:5275 -p 10000-20000:10000-20000 quantumobject/docker-jitsi-meet
 
 Where xxxxx is the port assigned by you for the container if not docker will assigned one for it.
 
