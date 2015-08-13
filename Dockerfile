@@ -1,5 +1,5 @@
 #name of container: docker-jitsi-meet
-#versison of container: 0.1.0
+#versison of container: 0.1.1
 FROM quantumobject/docker-baseimage
 MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 
@@ -41,7 +41,7 @@ VOLUME /var/backups
 
 # to allow access from outside of the container  to the container service
 # at that ports need to allow access from firewall if need to access it outside of the server. 
-EXPOSE 443 5275 10000-12500 10000-12500/udp
+EXPOSE 443 5275 10000-12500/tcp 10000-12500/udp
 
 # Use baseimage-docker's init system.
 CMD ["/sbin/my_init"]
