@@ -1,6 +1,6 @@
 #name of container: docker-jitsi-meet
 #versison of container: 0.1.1
-FROM quantumobject/docker-baseimage
+FROM angelrr7702/docker-baseimage
 MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 
 #add repository and update the container
