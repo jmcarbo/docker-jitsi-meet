@@ -8,7 +8,7 @@ MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 RUN echo 'deb http://download.jitsi.org/nightly/deb unstable/' >> /etc/apt/sources.list
 RUN wget -qO - http://download.jitsi.org/nightly/deb/unstable/archive.key | apt-key add -
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q  host  \
-                    && DEBIAN_FRONTEND=noninteractive apt-get install -y -q  jitsi-meet \
+                    && DEBIAN_FRONTEND=noninteractive apt-get install --fix-missing -y -q  jitsi-meet \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
                     && rm -rf /var/lib/apt/lists/*
