@@ -48,9 +48,12 @@ To help improve this container [docker-jitsi-meet][5]
 
 Example of this [docker-jitsi-meet][6]
 
+For additional info about us and our projects check our site [www.quantumobject.com][7]
+
 [1]:https://jitsi.org/
 [2]:https://www.docker.com
 [3]:https://jitsi.org/
 [4]:http://docs.docker.com
 [5]:https://github.com/QuantumObject/docker-jitsi-meet
 [6]:https://www.quantumobject.com:32773
+[7]:http://www.quantumobject.com/
