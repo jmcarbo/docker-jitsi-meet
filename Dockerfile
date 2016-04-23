@@ -1,5 +1,5 @@
 #name of container: docker-jitsi-meet
-#versison of container: 0.2.1
+#versison of container: 0.2.2
 FROM quantumobject/docker-baseimage:15.10
 MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 
@@ -7,7 +7,7 @@ MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 #Installation of nesesary package/software for this containers...
 RUN echo 'deb http://download.jitsi.org/nightly/deb unstable/' >> /etc/apt/sources.list
 RUN wget -qO - http://download.jitsi.org/nightly/deb/unstable/archive.key | apt-key add -
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q  host  \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q  host nginx \
                     && DEBIAN_FRONTEND=noninteractive apt-get install --fix-missing -y -q  jitsi-meet \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
@@ -26,19 +26,6 @@ RUN chmod +x /etc/my_init.d/startup.sh
 RUN mkdir /etc/service/nginx
 COPY nginx.sh /etc/service/nginx/run
 RUN chmod +x /etc/service/nginx/run
-
-#pre-config scritp for different service that need to be run when container image is create 
-#maybe include additional software that need to be installed ... with some service running ... like example mysqld
-COPY pre-conf.sh /sbin/pre-conf
-RUN chmod +x /sbin/pre-conf \
-    && /bin/bash -c /sbin/pre-conf \
-    && rm /sbin/pre-conf
-
-##scritp that can be running from the outside using docker-bash tool ...
-## for example to create backup for database with convitation of VOLUME   dockers-bash container_ID backup_mysql
-COPY backup.sh /sbin/backup
-RUN chmod +x /sbin/backup
-VOLUME /var/backups
 
 # to allow access from outside of the container  to the container service
 # at that ports need to allow access from firewall if need to access it outside of the server. 
