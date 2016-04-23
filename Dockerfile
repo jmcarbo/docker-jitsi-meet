@@ -7,7 +7,7 @@ MAINTAINER Angel Rodriguez  "angel@quantumobject.com"
 #Installation of nesesary package/software for this containers...
 RUN echo 'deb http://download.jitsi.org/nightly/deb unstable/' >> /etc/apt/sources.list
 RUN wget -qO - http://download.jitsi.org/nightly/deb/unstable/archive.key | apt-key add -
-RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q  host  \
+RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y -q  host nginx \
                     && DEBIAN_FRONTEND=noninteractive apt-get install --fix-missing -y -q  jitsi-meet \
                     && apt-get clean \
                     && rm -rf /tmp/* /var/tmp/*  \
