@@ -1,5 +1,5 @@
 
-Note: I'm (Angel Rodriguez) not recomended to install this container, It used to many ports and docker will strugle for that reason. Maybe you will be able to deploy jitsi-meet on dedicate VM or LXD container diretley without docker. I will keep the project open for subjection and reference.  
+Note: I'm (Angel Rodriguez) not recomended to install this container, It used to many ports and docker will struggle for that reason. Maybe you will be able to deploy jitsi-meet on dedicate VM or LXD container diretley without docker. I will keep the project open for subjection and reference.  
 
 # docker-jitsi-meet
 
